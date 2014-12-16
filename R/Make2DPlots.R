@@ -17,14 +17,10 @@ function(GraphQuant){
                   
                     # THE SILHOUETTE PLOT
                     pdf(paste(DirName,"/Silhouette.pdf", sep=""));
-                    plot(GraphQuant$PamClRange, GraphQuant$SilPlot,'o', pch=18, main="Silhouette plot for PAM", xlab="Number of cluster", ylab="Silhouette width") 
+                    plot(GraphQuant$PamClRange, GraphQuant$SilPlot,'o', pch=18, main="Silhouette plot", xlab="Number of cluster", ylab="Silhouette width") 
                     dev.off()
                     
-                    # THE TRUE ESTIMATED MODEL 
-                    pdf(paste(DirName, "/TrueModel.pdf", sep=""))
-                    plot(GraphQuant$Coords, pch=20,cex=1,main="Estimated coordinates of the samples",xlab="X",ylab="Y");
-                    dev.off()
-                    
+                      
                     # THE MODEL WITH ESTIMATED CLUSTERS
                     pdf(paste(DirName, "/EstimatedClusters.pdf", sep = ""))
                     Colors <- rainbow(GraphQuant$OptimClust);

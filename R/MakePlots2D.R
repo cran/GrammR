@@ -21,18 +21,11 @@ MakePlots2D <- function(GraphQuant){
                     # THE SILHOUETTE PLOT TAB
                     SilFile <- paste(getwd(),"/", DirName, "/Sihouette.jpg", sep = "");
                     jpeg(SilFile, width = 600, height = 600, quality = 100)
-                    plot(GraphQuant$PamClRange, GraphQuant$SilPlot,'o', pch=18, main="Silhouette plot for PAM", xlab="Number of cluster", ylab="Silhouette width") 
+                    plot(GraphQuant$PamClRange, GraphQuant$SilPlot,'o', pch=18, main="Silhouette plot", xlab="Number of cluster", ylab="Silhouette width") 
                     dev.off()
                     Tab$Silhouette <- gimage(label = "Silhouette Plot", filename = SilFile, container = PlotTabs)
 
-                    # THE TRUE ESTIMATED MODEL  TAB
-                    EstFile <- paste(getwd(),"/", DirName,"/EstimatedModel.jpg", sep = "");
-                    jpeg(EstFile, width = 600, height = 600, quality = 100)
-                    plot(GraphQuant$Coords, pch=20,cex=1,main="Estimated coordinates of the samples",xlab="X",ylab="Y");
-                    dev.off()
-                    Tab$True <- gimage(label = "Estimated Model", filename = EstFile, container = PlotTabs);
-
-                    # THE MODEL WITH ESTIMATED CLUSTERS TAB
+                   ## THE MODEL WITH ESTIMATED CLUSTERS TAB
                     ClustFile <- paste(getwd(),"/", DirName,"/ClusterModel.jpg", sep = "");
                     jpeg(ClustFile, width = 600, height = 600, quality = 100)
                     Colors <- rainbow(GraphQuant$OptimClust);

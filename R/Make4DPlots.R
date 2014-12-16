@@ -18,39 +18,12 @@ function(GraphQuant){
                    
                     # THE SILHOUETTE PLOT TAB
                     pdf(paste(DirName,"/Silhouette.pdf", sep=""));
-                    plot(GraphQuant$PamClRange, GraphQuant$SilPlot,'o', pch=18, main="Silhouette plot for PAM", xlab="Number of cluster", ylab="Silhouette width") 
+                    plot(GraphQuant$PamClRange, GraphQuant$SilPlot,'o', pch=18, main="Silhouette plot", xlab="Number of cluster", ylab="Silhouette width") 
                     dev.off()
                     
-                    ## THE TRUE ESTIMATED MODEL TAB
-                    
-                     ## CREATE A SUBDIRECTORY FOR THE WEBPAGES
-                   
-                    DirName_Est <- paste(DirName, "/EstimatedModel", sep="");
-                    dir.create(DirName_Est, showWarnings = FALSE);           
-                    
-                    open3d(useNULL = TRUE) #Estimated MDS plot showing XYZ axis
-                    plot3d(GraphQuant$Coords[,-4], type='s',size=1,xlab="X",ylab="Y",zlab="Z",main="Estimated model");
-                    writeWebGL(dir = DirName_Est, filename = file.path(DirName_Est, "Model_XYZ.html"), width=800, height=800, snapshot = FALSE)
-                    rgl.close();
-                    
-                    open3d(useNULL = TRUE) #Estimated MDS plot showing YZW axis
-                    plot3d(GraphQuant$Coords[,-1], type='s',size=1,xlab="Y",ylab="Z",zlab="W",main="Estimated model");
-                    writeWebGL(dir = DirName_Est, filename = file.path(DirName_Est, "Model_YZW.html"), width=800, height=800, snapshot = FALSE)
-                    rgl.close();
-                  
-                    open3d(useNULL = TRUE) #Estimated MDS plot showing XZW axis
-                    plot3d(GraphQuant$Coords[,-2], type='s',size=1,xlab="X",ylab="Z",zlab="W",main="Estimated model");
-                    writeWebGL(dir = DirName_Est, filename = file.path(DirName_Est, "Model_XZW.html"), width=800, height=800, snapshot = FALSE)
-                    rgl.close();
-                   
-                    open3d(useNULL = TRUE) #Estimated MDS plot showing XYW axis
-                    plot3d(GraphQuant$Coords[,-3], type='s',size=1,xlab="X",ylab="Y",zlab="W",main="Estimated model");
-                    writeWebGL(dir = DirName_Est, filename = file.path(DirName_Est, "Model_XYW.html"), width=800, height=800, snapshot = FALSE)
-                    rgl.close();
-                    
-                    ## THE MODEL WITH ESTIMATED CLUSTERS TAB
+                   ## THE MODEL WITH ESTIMATED CLUSTERS TAB
                      
-                    ## CREATE A SUBDIRECTORY FOR THE WEBPAGES
+                   ## CREATE A SUBDIRECTORY FOR THE WEBPAGES
                    DirName_Clust <- paste(DirName, "/EstimatedClusters", sep="");
                    dir.create(DirName_Clust, showWarnings = FALSE);    
                    Colors <- rainbow(GraphQuant$OptimClust);                           

@@ -17,21 +17,10 @@ function(GraphQuant){
                                         
                    # THE SILHOUETTE PLOT
                      pdf(paste(DirName,"/Silhouette.pdf", sep=""));
-                    plot(GraphQuant$PamClRange, GraphQuant$SilPlot,'o', pch=18, main="Silhouette plot for PAM", xlab="Number of cluster", ylab="Silhouette width") 
+                    plot(GraphQuant$PamClRange, GraphQuant$SilPlot,'o', pch=18, main="Silhouette plot", xlab="Number of cluster", ylab="Silhouette width") 
                     dev.off()
                     
-                    ## THE TRUE ESTIMATED MODEL TAB
-                    
-                    ## CREATE A SUBDIRECTORY FOR THE WEBPAGES
-                    DirName_Est <- paste(DirName, "/EstimatedModel", sep="");
-                    dir.create(DirName_Est, showWarnings = FALSE);
-                    
-                    open3d(useNULL = TRUE) #Estimated MDS plot
-                    plot3d(GraphQuant$Coords, type='s',size=1,xlab="X",ylab="Y",zlab="Z",main="Estimated model");
-                    writeWebGL(dir = DirName_Est, filename = file.path(DirName_Est, "Model.html"), width=800, height=800, snapshot = FALSE)
-                    rgl.close();
-                                        
-                    # THE MODEL WITH ESTIMATED CLUSTERS TAB
+                   ## THE MODEL WITH ESTIMATED CLUSTERS TAB
                     
                     ## CREATE A SUBDIRECTORY FOR THE WEBPAGES
                     DirName_Clust <- paste(DirName, "/EstimatedClusters", sep="");

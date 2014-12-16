@@ -25,50 +25,11 @@ MakePlots4D <- function(GraphQuant){
                     # THE SILHOUETTE PLOT TAB
                     SilFile <- paste(getwd(),"/",DirName,"/Silhouette.jpg", sep = "");
                     jpeg(SilFile, width = 600, height = 600, quality = 100)
-                    plot(GraphQuant$PamClRange, GraphQuant$SilPlot,'o', pch=18, main="Silhouette plot for PAM", xlab="Number of cluster", ylab="Silhouette width") 
+                    plot(GraphQuant$PamClRange, GraphQuant$SilPlot,'o', pch=18, main="Silhouette plot", xlab="Number of cluster", ylab="Silhouette width") 
                     dev.off()
                     Tab$Silhouette <- gimage(label = "Silhouette Plot", filename = SilFile, container = PlotTabs)
                     
-                    # THE ESTIMATED MODEL TAB
-                    DirName_Est <- paste(DirName, "/EstimatedModel", sep="");
-                    dir.create(DirName_Est, showWarnings = FALSE);           
-                    
-                    Tab$EstModel <- ggroup(tab.pos = 3, label = "Estimated model", container = PlotTabs, horizontal = FALSE);
-                    
-                    ## Tab$EstModel TAB CONTAINS 4 BUTTONS, EACH WITH PLOTS CONSTRUCTED BY REMOVING ONE DIMENSION AT A TIME.
-                    Tab$EstMod1 <- gbutton("Show the model - XYZ Coordinates", container = Tab$EstModel);
-                    addSpace(Tab$EstModel, 20, horizontal = FALSE);
-                    Tab$EstMod2 <- gbutton("Show the model - YZW Coordinates", container = Tab$EstModel);
-                    addSpace(Tab$EstModel, 20, horizontal = FALSE);
-                    Tab$EstMod3 <- gbutton("Show the model - XZW Coordinates", container = Tab$EstModel);
-                    addSpace(Tab$EstModel, 20, horizontal = FALSE);
-                    Tab$EstMod4 <- gbutton("Show the model - XYW Coordinates", container = Tab$EstModel);
-                    
-                    open3d(useNULL = TRUE) #Estimated MDS plot showing XYZ axis
-                    plot3d(GraphQuant$Coords[,-4], type='s',size=1,xlab="X",ylab="Y",zlab="Z",main="Estimated model");
-                    writeWebGL(dir = DirName_Est, filename = file.path(DirName_Est, "Model_XYZ.html"), width=800, height=800, snapshot = FALSE)
-                    rgl.close();
-                    addHandlerClicked(Tab$EstMod1, handler = function(h,...){ browseURL(paste(getwd(),"/",DirName_Est,"/Model_XYZ.html",sep="")) });
-        
-                    open3d(useNULL = TRUE) #Estimated MDS plot showing YZW axis
-                    plot3d(GraphQuant$Coords[,-1], type='s',size=1,xlab="Y",ylab="Z",zlab="W",main="Estimated model");
-                    writeWebGL(dir = DirName_Est, filename = file.path(DirName_Est, "Model_YZW.html"), width=800, height=800, snapshot = FALSE)
-                    rgl.close();
-                   addHandlerClicked(Tab$EstMod2, handler = function(h,...){ browseURL(paste(getwd(),"/",DirName_Est,"/Model_YZW.html",sep="")) }); 
-                    
-                    open3d(useNULL = TRUE) #Estimated MDS plot showing XZW axis
-                    plot3d(GraphQuant$Coords[,-2], type='s',size=1,xlab="X",ylab="Z",zlab="W",main="Estimated model");
-                    writeWebGL(dir = DirName_Est, filename = file.path(DirName_Est, "Model_XZW.html"), width=800, height=800, snapshot = FALSE)
-                    rgl.close();
-                    addHandlerClicked(Tab$EstMod3, handler = function(h,...){ browseURL(paste(getwd(),"/",DirName_Est,"/Model_XZW.html",sep="")) });
-                    
-                    open3d(useNULL = TRUE) #Estimated MDS plot showing XYW axis
-                    plot3d(GraphQuant$Coords[,-3], type='s',size=1,xlab="X",ylab="Y",zlab="W",main="Estimated model");
-                    writeWebGL(dir = DirName_Est, filename = file.path(DirName_Est, "Model_XYW.html"), width=800, height=800, snapshot = FALSE)
-                    rgl.close();
-                    addHandlerClicked(Tab$EstMod4, handler = function(h,...){ browseURL(paste(getwd(),"/",DirName_Est,"/Model_XYW.html",sep="")) });
-        
-                    # THE MODEL WITH ESTIMATED CLUSTERS TAB
+                   ## THE MODEL WITH ESTIMATED CLUSTERS TAB
                     DirName_Clust <- paste(DirName, "/EstimatedClusters", sep="");
                     dir.create(DirName_Clust, showWarnings = FALSE);           
                     Colors <- rainbow(GraphQuant$OptimClust);

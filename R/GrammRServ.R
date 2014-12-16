@@ -34,5 +34,7 @@ function(Data = NULL, Cluster = NULL, DataType = "Counts", DistType = "Kendall's
         Mod4 <- Make3DPlots(GraphQuants$mds3d)
         Mod5 <- Make4DPlots(GraphQuants$pcoa4d)
         Mod6 <- Make4DPlots(GraphQuants$mds4d)
-        message(paste("Analysis Complete. \nGraphical models are saved in subdirectories within your current working directory. \nCurrent working directory:", getwd()));
+        setwd("../")
+        message(paste("Analysis Complete. \nGraphical models are saved in subdirectories within ",  paste(getwd(), "/",Data.FolderName,sep=""),  " \nCurrent working directory:", getwd()));
+        
  }

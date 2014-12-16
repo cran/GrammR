@@ -25,24 +25,11 @@ MakePlots3D <- function(GraphQuant){
                     # THE SILHOUETTE PLOT TAB
                     SilFile <- paste(getwd(),"/",DirName,"/Silhouette.jpg", sep = "");
                     jpeg(SilFile, width = 600, height = 600, quality = 100)
-                    plot(GraphQuant$PamClRange, GraphQuant$SilPlot,'o', pch=18, main="Silhouette plot for PAM", xlab="Number of cluster", ylab="Silhouette width") 
+                    plot(GraphQuant$PamClRange, GraphQuant$SilPlot,'o', pch=18, main="Silhouette plot", xlab="Number of cluster", ylab="Silhouette width") 
                     dev.off()
                     Tab$Silhouette <- gimage(label = "Silhouette Plot", filename = SilFile, container = PlotTabs)
 
-                    # THE ESTIMATED MODEL TAB
-                    DirName_Est <- paste(DirName, "/EstimatedModel", sep="");
-                    dir.create(DirName_Est, showWarnings = FALSE);
-                    open3d(useNULL = TRUE) #Estimated MDS plot
-                    plot3d(GraphQuant$Coords, type='s',size=1,xlab="X",ylab="Y",zlab="Z", main="Estimated model");
-                    writeWebGL(dir = DirName_Est, filename = file.path(DirName_Est, "Model.html"), width=800, height=800, snapshot = FALSE)
-                    rgl.close();
-                    Tab$Est <- ggroup(horizontal  = FALSE, container = PlotTabs, label = "Estimated Model");
-                    addSpace(Tab$Est, 20, horizontal = FALSE);
-                    Tab$EstWeb <- gbutton("Show the 3D Model", container = Tab$Est);
-                    addHandlerClicked(Tab$EstWeb, handler = function(h,...){ browseURL(paste(getwd(),"/",DirName_Est,"/Model.html",sep="")) });
-                    
-                    
-                    # THE MODEL WITH ESTIMATED CLUSTERS TAB
+                   # THE MODEL WITH ESTIMATED CLUSTERS TAB
                      DirName_Clust <- paste(DirName, "/EstimatedClusters", sep="");
                     dir.create(DirName_Clust, showWarnings = FALSE);
                     open3d(useNULL = TRUE) #Estimated MDS plot

@@ -18,7 +18,7 @@ Given the coordinates and estimated cluster membership of samples for a multidim
 }
 
 \arguments{
-\item{GraphQuant}{A list containing the estimated coordinates, cluster membership and average silhouette widths. The list is obtained as an outcome of \code{\link{GraphMetagen}}}
+\item{GraphQuant}{A list containing the estimated coordinates, cluster membership and average silhouette widths. The list is obtained as an outcome of \code{\link{GraphMetagen}}}.
 }
 
 \value{
@@ -28,6 +28,23 @@ For two dimensional models, plots constructed and saved in the directory are the
 
 Three and four dimensional models create further subdirectories within the created model directory to save HTML files which display the models in the default web browser.
 }
+
+\details{
+When \code{\link{GraphMetagen}} is used with \code{Norms = c(2,3)} and \code{Dimensions = c(2,3,4)}, the resulting quantity contains MDS and PCoA models of dimensions 2, 3 and 4. If GraphQuant is the output of \code{\link{GraphMetagen}}, \code{MakeGUIPlots} is used to construct and save graphical models as following:
+
+    \code{Make2DPlots(GraphQuant$mds2d)}
+    
+    \code{Make3DPlots(GraphQuant$mds3d)}
+    
+    \code{Make4DPlots(GraphQuant$mds4d)}
+    
+    \code{Make2DPlots(GraphQuant$pcoa2d)}
+    
+    \code{Make3DPlots(GraphQuant$pcoa3d)}
+    
+    \code{Make4DPlots(GraphQuant$pcoa4d)}    
+}
+
 
 \author{
 Deepak Nag Ayyala <ayyala.1@osu.edu>

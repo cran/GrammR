@@ -4,7 +4,7 @@
 Misclassification Error
 }
 \description{
-Given the true cluster classification of the samples based on some pre-determined criterion and an estimated cluster membership determined using a clustering algorithm, this function calculates the misclassification error of the algorithm. 
+Given the true cluster classification of the samples based on some pre-determined criterion and an estimated cluster membership determined using a clustering algorithm, this function calculates the misclassification error of the algorithm. This measure of dissimilarity between two clustering methods is equivalent to one minus the Rand Index. 
 }
 \usage{
 MCError(True, Est)
@@ -20,6 +20,10 @@ A \eqn{N \times 1} vector consisting integer values ranging between 1 and \eqn{M
 
 \value{
 A numeric between 0 and 1. If the vectors are of unequal lengths, the function returns NA.
+}
+
+\references{
+L. Hubert and P. Arabie (1985) Comparing Partitions, Journal of the Classification 2:193-218.
 }
 
 \author{
