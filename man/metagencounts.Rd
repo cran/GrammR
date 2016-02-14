@@ -8,6 +8,6 @@ This data comprises random metagenomic counts generated using simulation model I
 
 \usage{data(metagencounts)}
 \format{data.frame}
-\references{Ayyala, D. N., Lin, S., (2014) Graphical Representation and Modeling of Metagenomic Reads, \emph{Manuscript}}
+\references{Ayyala, D. N., Lin, S., (2015) GrammR: graphical representation and modeling of count data with application in metagenomics, \emph{Bioinformatics}, \bold{31(10)}}
 \keyword{datasets}
 

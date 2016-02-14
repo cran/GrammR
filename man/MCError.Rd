@@ -27,7 +27,7 @@ L. Hubert and P. Arabie (1985) Comparing Partitions, Journal of the Classificati
 }
 
 \author{
-Deepak Nag Ayyala <ayyala.1@osu.edu>
+Deepak Nag Ayyala <deepaknagayyala@gmail.com>
 }
 
 \examples{

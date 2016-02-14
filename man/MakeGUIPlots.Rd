@@ -44,7 +44,7 @@ When \code{\link{GraphMetagen}} is used with \code{Norms = c(2,3)} and \code{Dim
     \code{MakePlots4D(GraphQuant$pcoa4d)}    
 }
 \author{
-Deepak Nag Ayyala <ayyala.1@osu.edu>
+Deepak Nag Ayyala <deepaknagayyala@gmail.com>
 }
 
 \seealso{

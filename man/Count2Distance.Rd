@@ -37,7 +37,7 @@ A \eqn{N \times N} symmetric matrix with all zeroes along the diagonal, where \e
 }
 
 \author{
-Deepak Nag Ayyala <ayyala.1@osu.edu>
+Deepak Nag Ayyala <deepaknagayyala@gmail.com>
 }
 
 \seealso{

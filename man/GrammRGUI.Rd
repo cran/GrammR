@@ -19,7 +19,7 @@ The RGUI creates a window with multiple tabs. The number of tabs is determined b
 }
 
 \author{
-Deepak Nag Ayyala <ayyala.1@osu.edu>
+Deepak Nag Ayyala <deepaknagayyala@gmail.com>
 }
 \seealso{
 \code{\link{GrammRServ}}

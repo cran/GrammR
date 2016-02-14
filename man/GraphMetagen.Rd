@@ -43,16 +43,16 @@ A list containing the following items
 Chen, J., et.al. (2012) Associating microbiome composition with environmental covariates using generalized UniFrac distance, Bioinformatics, 28(16). 
 }
 \author{
-Deepak Nag Ayyala <ayyala.1@osu.edu>
+Deepak Nag Ayyala <deepaknagayyala@gmail.com>
 }
 \seealso{
 \code{\link{GrammRServ}}
 }
 
 \examples{
-data(metagencounts)
+\dontrun{data(metagencounts)
 X <- list(Contents = metagencounts$Counts, Clust = metagencounts$CommMemshp, 
 DataType = "Counts", DistType = "Kendall's tau-distance", 
 Dimensions = c(2,3,4), Norms = c(1,2), Penalty = 0.5, MinClust = 2);
-GraphMetagen(X);
+GraphMetagen(X);}
 }

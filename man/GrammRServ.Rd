@@ -67,7 +67,7 @@ For all models, a text file containing the estimated cluster membership is saved
 }
 
 \author{
-Deepak Nag Ayyala <ayyala.1@osu.edu>
+Deepak Nag Ayyala <deepaknagayyala@gmail.com>
 }
 \references{
 Chen, J., et.al. (2012) Associating microbiome composition with environmental covariates using generalized UniFrac distance, Bioinformatics, 28(16). 

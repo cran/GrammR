@@ -27,7 +27,7 @@ A \eqn{N \times N} symmetric dissimilarity matrix, where \eqn{N} is the number o
 Fagin, Ronald et.al. (2004) Comparing partial rankings, SIAM Journal on Discrete Mathematics, 20, 47-58.
 }
 \author{
-Deepak Nag Ayyala <ayyala.1@osu.edu>
+Deepak Nag Ayyala <deepaknagayyala@gmail.com>
 }
 
 \seealso{

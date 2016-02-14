@@ -26,11 +26,11 @@ A \eqn{N \times N} symmetric matrix, where \eqn{N} is the number of rows of the 
 }
 
 \author{
-Deepak Nag Ayyala <ayyala.1@osu.edu>
+Deepak Nag Ayyala <deepaknagayyala@gmail.com>
 }
 
 \examples{
-    data(metagencounts)
-    Distance <- MatrixkNorm(metagencounts$Counts, p = 2);
+    \dontrun{data(metagencounts)
+    Distance <- MatrixkNorm(metagencounts$Counts, p = 2);}
 }
 

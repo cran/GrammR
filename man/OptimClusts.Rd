@@ -28,7 +28,7 @@ An integer value between 1 and \eqn{K}, where \eqn{K} is the length of the silho
 The function \code{OptimClusts} uses the mPAM (modified PAM) algorithm described in the first reference below. For a data set with \eqn{N} samples (or taxa/OTUs when clustering taxa/OTUs), the value of \eqn{K} to be used to avoid overestimation of clusters is \eqn{\left[ 2\sqrt{N} \right]}, where \eqn{\left[x \right]} is the largest integer smaller than \eqn{x}.
 }
 \references{
-Ayyala, D. N., Lin, S., (2014) Graphical Representation and Modeling of Metagenomic Reads, \emph{Manuscript}.
+Ayyala, D. N., Lin, S., (2015) GrammR: graphical representation and modeling of count data with application in metagenomics, \emph{Bioinformatics}, \bold{31(10)}.
 
 Peter J. Rousseeuw (1987) Silhouettes: A graphical aid to the interpretation and validation of cluster analysis, \emph{Journal of Computational and Applied Mathematics}, \bold{20}.
 }

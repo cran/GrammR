@@ -28,7 +28,7 @@ Deepak Nag Ayyala, Shili Lin.
 }
 
 \references{
-Ayyala, D. N., Lin, S. (2014) Graphical Representation and Modeling of Metagenomic Reads, Manuscript.
+Ayyala, D. N., Lin, S., (2015) GrammR: graphical representation and modeling of count data with application in metagenomics, \emph{Bioinformatics}, \bold{31(10)}.
 
 Lozupone, Catherine and Knight, Rob (2005) UniFrac: a New Phylogenetic Method for Comparing Microbial Communities, Applied and Environmental Microbiology, 8228-8235.
 

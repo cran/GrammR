@@ -22,7 +22,7 @@ Summarize(GraphQuant)
 }
 
 \author{
-Deepak Nag Ayyala <ayyala.1@osu.edu>
+Deepak Nag Ayyala <deepaknagayyala@gmail.com>
 }
 
 \seealso{
